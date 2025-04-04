@@ -11,7 +11,7 @@ import (
 type Config struct {
 	CsKey      string `envconfig:"CLOUDSQUID_API_KEY" required:"true"`
 	CsEndpoint string `envconfig:"CLOUDSQUID_API_ENDPOINT" required:"true"`
-	CsSourceID string `envconfig:"CLOUDSQUID_SOURCE_ID" required:"true"`
+	CsSourceID string `envconfig:"CLOUDSQUID_AGENT_ID" required:"true"`
 }
 
 func Load(configFile string) (*Config, error) {
