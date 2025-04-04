@@ -14,14 +14,14 @@ type Config struct {
 	CsSourceID string `envconfig:"CLOUDSQUID_AGENT_ID" required:"true"`
 }
 
-func Load(configFile string) (*Config, error) {
-	if err := godotenv.Overload(configFile); err != nil {
-		return nil, fmt.Errorf("loading environmental variables %s: %w", configFile, err)
+func Load() (*Config, error) {
+	if err := godotenv.Overload(); err != nil {
+		return nil, fmt.Errorf("loading environmental variables: %w", err)
 	}
 
 	config := Config{}
 	if err := envconfig.Process("", &config); err != nil {
-		return nil, fmt.Errorf("processing env config %s: %w", configFile, err)
+		return nil, fmt.Errorf("processing env config %w", err)
 	}
 
 	log.Printf("Loaded config: %s", config)
