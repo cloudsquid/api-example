@@ -1,2 +1,2 @@
 # api-example
-Example usage of the cloudsquid api, including example files
+Example usage of the cloudsquid api
